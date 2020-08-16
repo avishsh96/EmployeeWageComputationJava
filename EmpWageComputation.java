@@ -8,15 +8,18 @@ public class EmpWageComputation{
         int empWage;
             int randomCheck = (int) (Math.random() * 10) % 3;
             System.out.println(randomCheck);
-            if (randomCheck == IS_FULL_TIME) {
-                System.out.println("FullTime");
-                empHrs = 8;
-            } else if (randomCheck == IS_PART_TIME) {
-                System.out.println("PartTime");
-                empHrs = 4;
-            }else {
-                System.out.println("Absent");
-                empHrs=0;
+            switch (randomCheck){
+                case IS_FULL_TIME:
+                    System.out.println("Fulltime");
+                    empHrs=8;
+                    break;
+                case IS_PART_TIME:
+                    System.out.println("PartTime");
+                    empHrs = 4;
+                    break;
+                    default:
+                        System.out.println("Absent");
+                        empHrs=0;
             }
             empWage = empHrs * EMP_WAGE_PER_HOUR;
             System.out.println("Employee Wage: " + empWage);
